@@ -13,9 +13,7 @@ $(document).ready(function() {
   );
 
   $('#genre').click(function(){
-    var genere = $(this).val();
-      $('.cd').hide();
-      $('.' + genere + '').show();
+    changeByGenre($(this));
   })
 
 });
@@ -30,4 +28,10 @@ function albumWork(dati){
     console.log(context);
     $('.cds-container').append(html);
     }
+}
+
+function changeByGenre(element){
+  var genere = element.val();
+    $('.cd').hide();
+    $('.' + genere + '').show();
 }
